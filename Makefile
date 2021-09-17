@@ -104,7 +104,7 @@ prepare.azurerm:
 	@WORK_DIR=$(WORK_DIR) AZURERM_REFSPEC=$(AZURERM_REFSPEC) ./scripts/prepare_azurerm.sh
 
 codegen.pipeline: prepare.azurerm
-	@USE_INCLUDE_LIST=true go run cmd/generator/main.go
+	@USE_INCLUDE_LIST=false go run cmd/generator/main.go
 
 .PHONY: cobertura submodules fallthrough run crds.clean
 
