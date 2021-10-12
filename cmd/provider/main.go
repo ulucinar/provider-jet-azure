@@ -69,7 +69,7 @@ func main() {
 	rl := ratelimiter.NewDefaultProviderRateLimiter(ratelimiter.DefaultProviderRPS)
 	kingpin.FatalIfError(apis.AddToScheme(mgr.GetScheme()), "Cannot add Azure APIs to scheme")
 	kingpin.FatalIfError(controller.Setup(mgr, log, rl,
-		clients.TerraformSetupBuilder(*terraformVersion, *providerSource, *providerVersion), terraform.NewWorkspaceStore(log), 1),
+		clients.TerraformSetupBuilder(*terraformVersion, *providerSource, *providerVersion), terraform.NewWorkspaceStore(log), 2),
 		"Cannot setup Azure controllers")
 	kingpin.FatalIfError(mgr.Start(ctrl.SetupSignalHandler()), "Cannot start controller manager")
 }
