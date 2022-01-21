@@ -3,7 +3,6 @@ package clients
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 
 	"github.com/crossplane/terrajet/pkg/terraform"
 	"github.com/pkg/errors"
@@ -31,15 +30,11 @@ const (
 	// Terraform Provider configuration keys
 	keyTerraformFeatures        = "features"
 	keySkipProviderRegistration = "skip_provider_registration"
-	// environment variable names for storing credentials
-	envClientID       = "ARM_CLIENT_ID"
-	envClientSecret   = "ARM_CLIENT_SECRET"
-	envSubscriptionID = "ARM_SUBSCRIPTION_ID"
-	envTenantID       = "ARM_TENANT_ID"
 	// Terraform configuration file keys
 	keyTerraformSubscriptionID = "subscription_id"
-
-	fmtEnvVar = "%s=%s"
+	keyTerraformTenantID       = "tenant_id"
+	keyTerraformClientID       = "client_id"
+	keyTerraformClientSecret   = "client_secret"
 )
 
 // TerraformSetupBuilder returns Terraform setup with provider specific
@@ -88,13 +83,9 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 			// For details, see https://github.com/crossplane-contrib/provider-jet-azure/issues/104
 			keySkipProviderRegistration: true,
 			keyTerraformSubscriptionID:  azureCreds[keyAzureSubscriptionID],
-		}
-		// set credentials environment
-		ps.Env = []string{
-			fmt.Sprintf(fmtEnvVar, envSubscriptionID, azureCreds[keyAzureSubscriptionID]),
-			fmt.Sprintf(fmtEnvVar, envTenantID, azureCreds[keyAzureTenantID]),
-			fmt.Sprintf(fmtEnvVar, envClientID, azureCreds[keyAzureClientID]),
-			fmt.Sprintf(fmtEnvVar, envClientSecret, azureCreds[keyAzureClientSecret]),
+			keyTerraformTenantID:        azureCreds[keyAzureTenantID],
+			keyTerraformClientID:        azureCreds[keyAzureClientID],
+			keyTerraformClientSecret:    azureCreds[keyAzureClientSecret],
 		}
 		return ps, err
 	}

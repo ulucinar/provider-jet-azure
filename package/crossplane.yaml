@@ -4,4 +4,4 @@ metadata:
   name: provider-azure
 spec:
   controller:
-    image: DOCKER_REGISTRY/provider-jet-azure-controller:VERSION
+    image: ulucinar/provider-jet-azure-controller-arm64:shared-grpc
