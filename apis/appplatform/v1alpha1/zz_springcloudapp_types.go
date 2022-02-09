@@ -74,7 +74,7 @@ type SpringCloudAppParameters struct {
 	// +kubebuilder:validation:Optional
 	PersistentDisk []PersistentDiskParameters `json:"persistentDisk,omitempty" tf:"persistent_disk,omitempty"`
 
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha2.ResourceGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha2.ResourceGroup
 	// +kubebuilder:validation:Optional
 	ResourceGroupName *string `json:"resourceGroupName,omitempty" tf:"resource_group_name,omitempty"`
 

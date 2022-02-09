@@ -88,7 +88,7 @@ type RedisCacheParameters struct {
 	// +kubebuilder:validation:Optional
 	ReplicasPerPrimary *int64 `json:"replicasPerPrimary,omitempty" tf:"replicas_per_primary,omitempty"`
 
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha2.ResourceGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha2.ResourceGroup
 	// +kubebuilder:validation:Optional
 	ResourceGroupName *string `json:"resourceGroupName,omitempty" tf:"resource_group_name,omitempty"`
 

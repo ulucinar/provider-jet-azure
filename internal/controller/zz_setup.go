@@ -110,9 +110,9 @@ import (
 	vmwarecluster "github.com/crossplane-contrib/provider-jet-azure/internal/controller/avs/vmwarecluster"
 	vmwareexpressrouteauthorization "github.com/crossplane-contrib/provider-jet-azure/internal/controller/avs/vmwareexpressrouteauthorization"
 	vmwareprivatecloud "github.com/crossplane-contrib/provider-jet-azure/internal/controller/avs/vmwareprivatecloud"
-	resourcegroup "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azure/resourcegroup"
-	resourceproviderregistration "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azure/resourceproviderregistration"
-	subscriptionazure "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azure/subscription"
+	resourcegroup "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azure2/resourcegroup"
+	resourceproviderregistration "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azure2/resourceproviderregistration"
+	subscriptionazure2 "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azure2/subscription"
 	cluster "github.com/crossplane-contrib/provider-jet-azure/internal/controller/azurestackhci/cluster"
 	accountbatch "github.com/crossplane-contrib/provider-jet-azure/internal/controller/batch/account"
 	application "github.com/crossplane-contrib/provider-jet-azure/internal/controller/batch/application"
@@ -764,7 +764,7 @@ func Setup(mgr ctrl.Manager, l logging.Logger, wl workqueue.RateLimiter, ps terr
 		vmwareprivatecloud.Setup,
 		resourcegroup.Setup,
 		resourceproviderregistration.Setup,
-		subscriptionazure.Setup,
+		subscriptionazure2.Setup,
 		cluster.Setup,
 		accountbatch.Setup,
 		application.Setup,

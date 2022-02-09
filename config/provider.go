@@ -130,7 +130,7 @@ func GetProvider() *tjconfig.Provider {
 	pc := tjconfig.NewProvider(
 		tf.Provider().ResourcesMap, resourcePrefix, modulePath,
 		tjconfig.WithShortName("azurejet"),
-		tjconfig.WithRootGroup("azure.jet.crossplane.io"),
+		tjconfig.WithRootGroup("azure2.jet.crossplane.io"),
 		// tjconfig.WithIncludeList(includedResources),
 		tjconfig.WithSkipList(skipList),
 		tjconfig.WithDefaultResourceFn(defaultResource(externalNameConfig(), groupOverrides())),

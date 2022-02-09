@@ -34,8 +34,8 @@ import (
 	v1alpha2 "github.com/crossplane-contrib/provider-jet-azure/apis/authorization/v1alpha2"
 	v1alpha1automation "github.com/crossplane-contrib/provider-jet-azure/apis/automation/v1alpha1"
 	v1alpha1avs "github.com/crossplane-contrib/provider-jet-azure/apis/avs/v1alpha1"
-	v1alpha1azure "github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha1"
-	v1alpha2azure "github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha2"
+	v1alpha1azure2 "github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha1"
+	v1alpha2azure2 "github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha2"
 	v1alpha1azurestackhci "github.com/crossplane-contrib/provider-jet-azure/apis/azurestackhci/v1alpha1"
 	v1alpha1batch "github.com/crossplane-contrib/provider-jet-azure/apis/batch/v1alpha1"
 	v1alpha1blueprint "github.com/crossplane-contrib/provider-jet-azure/apis/blueprint/v1alpha1"
@@ -140,8 +140,8 @@ func init() {
 		v1alpha2.SchemeBuilder.AddToScheme,
 		v1alpha1automation.SchemeBuilder.AddToScheme,
 		v1alpha1avs.SchemeBuilder.AddToScheme,
-		v1alpha1azure.SchemeBuilder.AddToScheme,
-		v1alpha2azure.SchemeBuilder.AddToScheme,
+		v1alpha1azure2.SchemeBuilder.AddToScheme,
+		v1alpha2azure2.SchemeBuilder.AddToScheme,
 		v1alpha1azurestackhci.SchemeBuilder.AddToScheme,
 		v1alpha1batch.SchemeBuilder.AddToScheme,
 		v1alpha1blueprint.SchemeBuilder.AddToScheme,

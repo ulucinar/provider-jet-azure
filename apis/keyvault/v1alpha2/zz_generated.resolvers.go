@@ -19,7 +19,7 @@ package v1alpha2
 
 import (
 	"context"
-	v1alpha2 "github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha2"
+	v1alpha2 "github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha2"
 	rconfig "github.com/crossplane-contrib/provider-jet-azure/apis/rconfig"
 	v1alpha21 "github.com/crossplane-contrib/provider-jet-azure/apis/storage/v1alpha2"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"

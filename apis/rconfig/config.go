@@ -30,7 +30,7 @@ const (
 	ExtractResourceIDFuncPath = APISPackagePath + "/rconfig.ExtractResourceID()"
 
 	// ResourceGroupPath is used as subpackage path for ResourceGroup
-	ResourceGroupPath = "/azure/v1alpha2.ResourceGroup"
+	ResourceGroupPath = "/azure2/v1alpha2.ResourceGroup"
 
 	// SubnetPath is used as subpackage path for network.Subnet
 	SubnetPath = "/network/v1alpha2.Subnet"

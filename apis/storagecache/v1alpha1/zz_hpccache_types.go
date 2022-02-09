@@ -189,7 +189,7 @@ type HPCCacheParameters struct {
 	// +kubebuilder:validation:Optional
 	NtpServer *string `json:"ntpServer,omitempty" tf:"ntp_server,omitempty"`
 
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha2.ResourceGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha2.ResourceGroup
 	// +kubebuilder:validation:Optional
 	ResourceGroupName *string `json:"resourceGroupName,omitempty" tf:"resource_group_name,omitempty"`
 

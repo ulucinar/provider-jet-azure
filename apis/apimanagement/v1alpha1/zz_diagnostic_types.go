@@ -271,7 +271,7 @@ type DiagnosticParameters struct {
 	// +kubebuilder:validation:Optional
 	OperationNameFormat *string `json:"operationNameFormat,omitempty" tf:"operation_name_format,omitempty"`
 
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure/v1alpha2.ResourceGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-jet-azure/apis/azure2/v1alpha2.ResourceGroup
 	// +kubebuilder:validation:Optional
 	ResourceGroupName *string `json:"resourceGroupName,omitempty" tf:"resource_group_name,omitempty"`
 
