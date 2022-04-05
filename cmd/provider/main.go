@@ -36,8 +36,10 @@ import (
 	"github.com/crossplane-contrib/provider-jet-azure/config"
 
 	// genConfig "github.com/crossplane-contrib/provider-jet-azure/cmd/generator/config"
+	classicapis "github.com/crossplane-contrib/provider-jet-azure/apis/classic"
 	"github.com/crossplane-contrib/provider-jet-azure/internal/clients"
 	"github.com/crossplane-contrib/provider-jet-azure/internal/controller"
+	classiccontrollers "github.com/crossplane-contrib/provider-jet-azure/pkg/controller"
 )
 
 func main() {
@@ -78,6 +80,8 @@ func main() {
 	setup := clients.TerraformSetupBuilder(*terraformVersion, *providerSource, *providerVersion)
 	rl := ratelimiter.NewGlobal(1)
 	kingpin.FatalIfError(apis.AddToScheme(mgr.GetScheme()), "Cannot add Azure APIs to scheme")
+	kingpin.FatalIfError(classicapis.AddToScheme(mgr.GetScheme()), "Cannot add classic Azure APIs to scheme")
+	kingpin.FatalIfError(classiccontrollers.Setup(mgr, log, rl, *syncPeriod), "Cannot setup classic Azure controllers")
 	kingpin.FatalIfError(controller.Setup(mgr, tjcontroller.Options{
 		Options: xpcontroller.Options{
 			Logger:            log,

@@ -33,6 +33,7 @@ func main() {
 	deleteGenDirs("apis", map[string]struct{}{
 		"v1alpha1": {},
 		"rconfig":  {},
+		"classic":  {},
 	})
 	// delete controller dirs
 	deleteGenDirs("internal/controller", map[string]struct{}{
